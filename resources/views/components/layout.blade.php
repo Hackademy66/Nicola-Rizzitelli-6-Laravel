@@ -11,6 +11,11 @@
   <body>
     {{-- Navbar --}}
     <x-navbar />
+    @if (session('gameCreated'))
+    <div class="alert alert-success">
+        {{ session('gameCreated') }}
+    </div>
+@endif
     {{-- Pagina con contenuto dinamico --}}
     <main class="min-vh-100">
         {{$slot}}

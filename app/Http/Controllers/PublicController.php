@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Game;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -8,7 +9,8 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
     public function homepage(){
-        return view('welcome');
+        $games = Game::all();
+        return view('welcome', ['games' => $games]);
     }
     public function contact_us(){
         return view('contact-us');

@@ -52,5 +52,13 @@
             </div>
         </div>
     </div>
+        <div class="container my-5">
+            <div class="row">
+                @foreach ($games as $game)
+                    <x-card :game="$game"/>
+                @endforeach
+            
+            </div>
+        </div>
 
 </x-layout>
